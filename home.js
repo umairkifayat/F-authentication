@@ -31,4 +31,30 @@ signOut(auth).then(() => {
 });
   })
 
+
+
+  const text = document.querySelector('#text')
+  const des = document.querySelector('#description')
+  const btn = document.querySelector('#submit');
+
+
+
+  btn.addEventListener('submit', async(event) =>{
+event.preventDefault();
+console.log(text.value);
+console.log(des.value);
+
+try {
+  const docRef = await addDoc(collection(db, "users"), {
+    first: "Ada",
+    last: "Lovelace",
+    born: 1815
+  });
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
+
+  })
+
   

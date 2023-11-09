@@ -1,5 +1,6 @@
 import {  signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js'
-import { auth } from "./config.js"
+import { auth,db } from "./config.js"
+import { collection, addDoc } from "firebase/firestore"
 
 const email = document.querySelector('.email');
 const btn = document.querySelector('.button');
